@@ -27,7 +27,12 @@ while True:
             i += 1
         print('\n')
     elif x == 'search':
-        print('Come back later \n')
+        print('please enter the search term:')
+        y = input()
+        for title in movies._movies:
+            if y.casefold() in title['name'].casefold():
+                print(title['name'])
+        print('\n')
     elif x == 'cast':
         print('Come back later \n')
     else: 
