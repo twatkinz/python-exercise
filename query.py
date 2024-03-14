@@ -14,7 +14,7 @@ menu['cast']="enter cast for searching cast"
 while True: 
     options=menu.keys()
     for entry in options: 
-      print ('*', menu[entry])
+        print ('*', menu[entry])
     print('\n')
 
     x=input() 
@@ -30,14 +30,25 @@ while True:
         print('please enter the search term:')
         y = input()
         i = 0
-        for title in movies._movies:
-            if y.casefold() in title['name'].casefold():
-                print(title['name'])
+        for j in movies._movies:
+            if y.casefold() in j['name'].casefold():
+                print(j['name'])
                 i += 1
         if i == 0:
             print('No results found')
         print('\n')
     elif x == 'cast':
-        print('Come back later \n')
+        print('please enter the search term:')
+        y = input()
+        i = 0
+        for j in movies._movies:
+            for k in j['cast']:
+                if y.casefold() in k.casefold():
+                    print(j['name'])
+                    print(f'[\'{k}\']')
+                    i += 1
+        if i == 0:
+            print('No results found')
+        print('\n')
     else: 
         print("Unknown option selected, try again \n")
